@@ -17,11 +17,11 @@ const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
   const { name, subject, title, topic, duration } = companion;
 
   if (!user) redirect("/sign-in");
-  if (!companion) redirect("/companions");
+  if (!name) redirect("/companions");
 
   return (
     <main>
-      <article className="flex rounded-border justify-between p-6 max-md:flex-col">
+      <article className="flex rounded-border justify-between p-6 max-md:flex-col h-[20vh]">
         <div className="flex items-center gap-2">
           <div
             className="size-[72px] flex items-center justify-center rounded-lg max-md:hidden"
@@ -47,12 +47,13 @@ const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
           {duration} minutes
         </div>
       </article>
-      <CompanionComponent
-        {...companion}
-        companionId={id}
-        userName={user.firstName!}
-        userImage={user.imageUrl!}
-      />
+
+        <CompanionComponent
+          {...companion}
+          companionId={id}
+          userName={user.firstName!}
+          userImage={user.imageUrl!}
+        />
     </main>
   );
 };
