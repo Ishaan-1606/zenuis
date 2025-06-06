@@ -12,6 +12,9 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: "Zenius",
   description: "Real-time AI Teaching Platform",
+  icons: {
+    icon: "/zenius.png",
+  },
 };
 
 export default function RootLayout({
@@ -21,6 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body className={`${bricolage.variable} antialiased`}>
         <ClerkProvider appearance={{ variables: { colorPrimary: "#fe5933" } }}>
           <Navbar />
